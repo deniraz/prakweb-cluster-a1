@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas 1 Praktikum 2</title>
+    <title>Latihan 1 Praktikum 2</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <div class="kalkulator">
             <h1 class="judul">KALKULATOR</h1>
 
-            <form method="post" action="Tugas1_kalkulator.php">
+            <form method="post" action="Latihan1_kalkulator.php">
                 <input type="text" name="bil1" class="bil" autocomplete="off" placeholder="Your first operand here">
                 <input type="text" name="bil2" class="bil" autocomplete="off" placeholder="Your second operand here">
 

@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan 3 Praktikum 2</title>
+</head>
+<body>
+  
+</body>
+</html>
 <html>
 <?php
 if (isset($_POST['check'])) {
@@ -11,7 +22,7 @@ if (isset($_POST['check'])) {
 }
 ?>
 
-<form method='post' action='Tugas3_prima.php'>
+<form method='post' action='Latihan3_prima.php'>
   <input type='text' name='bil' class='bil' autocomplete='off' placeholder='input'>
   <input type='submit' name='check' value='check' class='tombol'>
 </form>
@@ -19,9 +30,9 @@ if (isset($_POST['check'])) {
 <?php
 if (isset($_POST['check'])) {
   if ($prima) {
-    echo $bil, " Merupakan Bilangan Prima";
+    echo "<br>", $bil, " Merupakan Bilangan Prima";
   } else {
-    echo $bil, " Bukan Bilangan Prima";
+    echo "<br>", $bil, " Bukan Bilangan Prima";
   }
 }
 ?>
