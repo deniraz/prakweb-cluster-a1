@@ -35,7 +35,7 @@
             <?php
             if (isset($_POST['calculate'])) {
                 echo "<br>Berikut merupakan hasil dari setiap operasi";
-                echo "<br>PENJUMLAHAN", "<br>Operator : +<br>", "Hasil : ", $plus;
+                echo "<br><br>PENJUMLAHAN", "<br>Operator : +<br>", "Hasil : ", $plus;
                 echo "<br><br>PENGURANGAN", "<br>Operator : -<br>", "Hasil : ", $min;
                 echo "<br><br>PERKALIAN", "<br>Operator : *<br>", "Hasil : ", $mul;
                 echo "<br><br>PEMBAGIAN", "<br>Operator : /<br>", "Hasil : ", $div;
