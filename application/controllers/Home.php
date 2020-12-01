@@ -61,7 +61,7 @@ class Home extends CI_Controller {
                     return 0;
                 }
             } else {
-                $this->session->set_flashdata("danger", "Password yang anda Masukkan Salah");
+                $this->session->set_flashdata("danger", "Password yang anda masukkan salah");
                 redirect('home');
                 return 0;
             }
@@ -73,35 +73,6 @@ class Home extends CI_Controller {
         }  
     }
 
-    public function register()
-    {
-        $this->load->view('home/register');
-    }
-
-    public function registerProcess()
-    {
-        $this->form_validation->set_rules('username','Username','required',array('required' => 'Username wajib diisi'));
-        $this->form_validation->set_rules('password','Password','required|trim',array('required' => 'Password wajib diisi'));
-
-        if($this->form_validation->run() != false){
-
-            $username   = $this->input->post('username');
-            $password   = $this->input->post('password');
-            $password   = password_hash($password, PASSWORD_DEFAULT);
-
-            $data = [
-                'username'  => $username,
-                'password'  => $password,
-                'role'      => 1002, // 1002 => user biasa, 1001 => admin
-            ];
-
-            $this->m_crud->insertUser('tbl_users', $data);
-            $this->session->set_flashdata("success", "Pendaftar Telah Berhasil");
-            redirect('home');
-        } else {
-            $this->register();
-        }
-    }
 
     public function article()
     {
