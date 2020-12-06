@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<dataDiri>
+    <nama>
+        <awal>Siraz Tri</awal>
+        <akhir>Denira</akhir>
+    </nama>
+
+    <saudara>
+        <pertama>Nuraini Septi Denira</pertama>
+        <kedua>Nurlaily Denira</kedua>
+    </saudara>
+    
+    <jeniskelamin>Laki-laki</jenisKelamin>
+
+    <alamat>
+        <kabupaten>Lampung Selatan</kabupaten>
+        <provinsi>Lampung</provinsi>
+        <negara>Indonesia</negara>
+    </alamat>
+
+    <sosialMedia>
+        <github>deniraz</github>
+    </sosialMedia>
+</dataDiri>

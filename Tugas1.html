@@ -1,85 +1,61 @@
 <!DOCTYPE html>
-<html>
-<style type="text/css">
-    header {
-        width: 784px;
-        height: 200px;
-        border-right: 5px solid black;
-        border-left: 5px solid black;
-        border-top: 5px solid black;
-        border-bottom: 2px solid black;
-    }
-
-    header img {
-        width: 784px;
-        height: 200px;
-
-    }
-
-    .inikiri {
-        width: 200px;
-        height: auto;
-        border-right: 4px solid black;
-        border-left: 5px solid black;
-        border-bottom: 5px solid black;
-        border-top: 5px solid black;
-        position: fixed;
-        background-color: yellow;
-        padding-right: -5px;
-        padding-left: 5px;
-    }
-
-    .inikanan {
-        width: 584px;
-        height: auto;
-        border: 5px solid black;
-        margin-left: 200px;
-        background-color: #F3A5AC;
-        text-align: center;
-    }
-
-    footer {
-        width: 784px;
-        height: 100px;
-        background-color: #A286B0;
-        border-right: 5px solid black;
-        border-left: 5px solid black;
-        border-bottom: 5px solid black;
-    }
-</style>
+<html lang="en">
 
 <head>
-    <title>Tugas</title>
-    <header>
-        <a
-            href="https://steamcommunity.com/sharedfiles/filedetails/?id=2002392372">
-            <img src="https://steamuserimages-a.akamaihd.net/ugc/776245734737527372/7C2AE84B0225F42C6175F4842B396067F68D3DB0/"
-                alt="Reunion Movement"></a>
-    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>118140100_tugas1</title>
 </head>
 
 <body>
-    <div class="inikiri">
-        <h3>MENU</h3>
-        <ol>
-            <li><a href="https://www.arknights.global/" target="_blank">MAIN PAGE</a></li>
-            <li><a href="https://www.arknights.global/fankit" target="_blank">SPECIAL</a></li>
-            <li><a href="https://www.arknights.global/terms_of_service" target="_blank">TERMS OF SERVICE</a></li>
-            <br><br>
-        </ol>
-    </div>
-    <div class="inikanan">
-        <h3>Arknights</h3>
-        <p> Arknights is a tower defense mobile game developed by Chinese developers Studio Montagne and Hypergryph.
-            It was released in China on 1 May 2019, and worldwide on 16 January 2020 by Yostar.
-            Arknights is available on iOS and Android platforms and features gacha game mechanics.</p>
-    </div>
+    <input type="text" name="new" id="new">
+    <button onclick="add()">Tambah</button>
+    <ul id="ul">
+        <li id="1">Talulah | <a onclick="edit('1')">Edit</a> | <a onclick="hapus(1)">Hapus</a></li>
+        <li id="2">Surtr | <a onclick="edit('2')">Edit</a> | <a onclick="hapus(2)">Hapus</a></li>
+        <li id="3">Rosmontis | <a onclick="edit('3')">Edit</a> | <a onclick="hapus(3)">Hapus</a></li>
+    </ul>
 </body>
-
-<footer>
-    <br>
-    <p> NIM : 118140100 </p>
-    <p> Nama : Siraz Tri Denira</p>
-</footer>
+<script>
+    var i = 4;
+    function nedit(id = i) {
+        var edit = document.createElement("a");
+        edit.setAttribute("onclick", "edit(" + id + ")");
+        edit.append("Edit");
+        return edit;
+    }
+    function nerase(id = i) {
+        var edit = document.createElement("a");
+        edit.setAttribute("onclick", "hapus(" + id + ")");
+        edit.append("Hapus");
+        return edit;
+    }
+    function adchild(li, nama, id) {
+        li.append(nama + " | ");
+        li.append(nedit(id));
+        li.append(" | ");
+        li.append(nerase(id));
+    }
+    function add() {
+        var nama = document.getElementById("new").value;
+        var ul = document.getElementById("ul");
+        var newel = document.createElement("li");
+        newel.setAttribute("id", i);
+        adchild(newel, nama);
+        ul.append(newel);
+        i++;
+    }
+    function hapus(id) {
+        document.getElementById(id).remove();
+    }
+    function edit(id) {
+        var nama = prompt("Masukkan nama baru: ", document.getElementById(id).innerText.split(" | ")[0]);
+        if (nama != null) {
+            var li = document.getElementById(id);
+            li.innerHTML = "";
+            adchild(li, nama, id);
+        }
+    }
+</script>
 
 </html>
